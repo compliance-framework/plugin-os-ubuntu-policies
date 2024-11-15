@@ -20,15 +20,16 @@ make build
 
 ```shell
 opa eval -I -b policies -f pretty data.security <<EOF 
-[
-  {
-    "title": "Vulnerability CVE-2020-5311 detected",
-    "description": "libImaging/SgiRleDecode.c in Pillow before 6.2.2 has an SGI buffer overflow.",
-    "severity": "HIGH",
-    "remarks": "Review and apply patches to address this vulnerability.",
-    "cve_id": "CVE-2020-5311"
-  }
-]
+{
+  "violation": [
+    {
+      "title": "Vulnerability CVE-2020-5311 detected",
+      "description": "libImaging/SgiRleDecode.c in Pillow before 6.2.2 has an SGI buffer overflow.",
+      "remarks": "Review and apply patches to address this vulnerability.",
+      "severity": "CRITICAL"
+    }
+  ]
+}
 EOF
 ```
 
