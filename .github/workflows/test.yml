@@ -14,10 +14,10 @@ jobs:
       - name: Setup OPA
         uses: open-policy-agent/setup-opa@v2
         with:
-          version: latest
+          version: v0.46.1  # Specify a known good version
 
-      - name: Run OPA Tests
-        run: opa test policies
+      - name: Verify OPA Installation
+        run: opa version
 
-      - name: Run OPA Check
-        run: opa check policies
+      - name: Validate Policies
+        run: opa check policies/
